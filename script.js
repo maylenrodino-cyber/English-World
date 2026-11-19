@@ -1,0 +1,142 @@
+const $=id=>document.getElementById(id);
+const D={
+"Numbers":{e:"🔢",intro:"Count, read and write numbers from one to one hundred.",words:[],read:"There are twenty-five students in my class. I have two pencils and three notebooks. My teacher has one hundred colorful stickers!",sent:["I can count from one to one hundred.","There are thirty students in the school hall.","My classroom has twenty desks."],listen:["thirteen","thirty","fifty","one hundred"],speak:"I can count to one hundred in English.",q:"How do you write 42 in English?",a:"forty-two",opts:["forty-two","fourteen-two","fourty-two"]},
+"Big Numbers":{e:"🏙️",intro:"Discover thousands and learn how to say big numbers.",words:[["1,000","one thousand"],["2,000","two thousand"],["5,000","five thousand"],["10,000","ten thousand"],["10,001","ten thousand and one"],["12,500","twelve thousand five hundred"],["25,000","twenty-five thousand"],["100,000","one hundred thousand"]],read:"A big library can have ten thousand books. A city may have one hundred thousand people. Ten thousand and one is just one more than ten thousand!",sent:["Our town has ten thousand people.","The school collected five thousand bottle caps.","Ten thousand and one is a big number."],listen:["one thousand","ten thousand","ten thousand and one","one hundred thousand"],speak:"The number 10,001 is ten thousand and one.",q:"How do you write ten thousand and one?",a:"10,001",opts:["1,001","10,001","100,001"]},
+"Body Parts":{e:"🧍",intro:"Name body parts and describe what they do.",words:[["👀","eyes","I see with my eyes."],["👂","ears","I hear with my ears."],["👃","nose","I smell with my nose."],["👄","mouth","I eat with my mouth."],["🦷","teeth","I brush my teeth."],["🖐️","hands","I clap my hands."],["💪","arms","I lift with my arms."],["🦵","legs","I walk with my legs."],["🦶","feet","My feet are in my shoes."],["🧠","brain","My brain helps me think."]],read:"Ben is getting ready for school. He washes his face, brushes his teeth and combs his hair. He uses his eyes to read and his hands to write.",sent:["I have two eyes and two ears.","My hands help me draw pictures.","I use my legs when I run."],listen:["eyes","shoulders","knees","toes"],speak:"I have two eyes, two ears and one nose.",q:"Which body part do you use to hear?",a:"ears",opts:["eyes","ears","hands"]},
+"Animals":{e:"🐾",intro:"Meet wonderful animals. Listen to their names and animal sounds!",words:[["🐶","dog","Woof! Woof!"],["🐱","cat","Meow! Meow!"],["🐮","cow","Moo!"],["🐸","frog","Ribbit!"],["🦁","lion","Roar!"],["🐑","sheep","Baa! Baa!"],["🦆","duck","Quack! Quack!"],["🐴","horse","Neigh!"],["🐘","elephant","Pawoo!"],["🐵","monkey","Ooh-ooh!"]],read:"At the farm, Mia sees a cow, two ducks and a little dog. The cow says “moo” and the ducks say “quack”. The dog runs to Mia and wags its tail.",sent:["The lion is a wild animal.","A frog can jump very high.","The dog is playing in the garden."],listen:["dog","cat","cow","duck"],speak:"My favorite animal is the dolphin.",q:"Which animal says “Moo”?",a:"cow",opts:["cow","cat","horse"]},
+"Colors":{e:"🎨",intro:"Explore colors and describe the world around you.",words:[["🔴","red","The apple is red."],["🔵","blue","The sky is blue."],["🟡","yellow","The sun is yellow."],["🟢","green","The grass is green."],["🟣","purple","The flower is purple."],["🩷","pink","The bag is pink."],["🟠","orange","The carrot is orange."],["⚫","black","The cat is black."],["⚪","white","The cloud is white."],["🟤","brown","The bear is brown."]],read:"Lily has a colorful kite. It is red, yellow and blue. Her brother has a green kite. They run outside and play together.",sent:["My favorite color is purple.","The little bird is yellow.","I have a blue and pink notebook."],listen:["purple","orange","green","white"],speak:"My favorite color is blue because it is beautiful.",q:"What color is a ripe banana?",a:"yellow",opts:["yellow","purple","black"]},
+"Family":{e:"👨‍👩‍👧‍👦",intro:"Talk about your family and the people you love.",words:[["👩","mother","My mother is kind."],["👨","father","My father can cook."],["👧","sister","My sister likes music."],["👦","brother","My brother plays football."],["👵","grandmother","My grandmother tells stories."],["👴","grandfather","My grandfather has a garden."],["👶","baby","The baby is sleeping."],["👩","aunt","My aunt lives nearby."],["👨","uncle","My uncle tells funny jokes."],["🧒","cousin","My cousin is my friend."],["👧","niece","My niece likes drawing."],["👦","nephew","My nephew plays with blocks."],["👨‍👩‍👧‍👦","parents","My parents help me."],["👨‍👩‍👧‍👦","siblings","I play with my siblings."],["👨‍👩‍👧","stepmother","My stepmother is kind."],["👨‍👩‍👦","stepfather","My stepfather can cook."],["👨‍👩‍👧‍👦","family","We are a happy family."]],read:"On Sunday, Emma visits her grandparents. Her grandmother makes a delicious cake, and her grandfather tells a funny story. Emma loves spending time with her family.",sent:["I have one brother and one sister.","My family eats dinner together.","My aunt lives near our house."],listen:["mother","grandfather","sister","parents"],speak:"There are five people in my family.",q:"Your mother's mother is your...",a:"grandmother",opts:["aunt","grandmother","sister"]},
+"School":{e:"🎒",intro:"Learn classroom words and talk about your school day.",words:[["✏️","pencil","I write with a pencil."],["📚","books","I read my books."],["📏","ruler","The ruler is long."],["✂️","scissors","I cut paper with scissors."],["🎒","backpack","My backpack is blue."],["🖍️","crayon","The crayon is red."],["🪑","chair","Please sit on the chair."],["🧑‍🏫","teacher","Our teacher is helpful."],["📓","notebook","I write in my notebook."]],read:"It is Monday morning. Alex puts his books, pencils and notebook in his backpack. At school, he listens to his teacher and works with his classmates.",sent:["My classroom has twenty chairs.","I keep my pencils in my pencil case.","We learn English on Tuesday."],listen:["pencil","backpack","teacher","notebook"],speak:"My favorite subject at school is English.",q:"What do you use to measure a line?",a:"ruler",opts:["ruler","crayon","backpack"]},
+"Food":{e:"🍓",intro:"Talk about meals, fruit, vegetables and your favorite food.",words:[["🍎","apple","I eat an apple."],["🍌","banana","The banana is sweet."],["🍞","bread","I have bread for breakfast."],["🧀","cheese","The cheese is delicious."],["🥚","egg","I would like an egg."],["🥕","carrot","Rabbits like carrots."],["🍚","rice","We eat rice for lunch."],["🥛","milk","The milk is cold."],["🍕","pizza","Let's share a pizza."],["🥗","salad","The salad is fresh."]],read:"For breakfast, Tom eats bread, an egg and a banana. At lunch, he has rice and chicken. He drinks water because it is important to stay hydrated.",sent:["I like eating strawberries.","We have soup for dinner.","My favorite food is pasta."],listen:["bread","cheese","carrot","water"],speak:"My favorite food is pizza. It is delicious!",q:"Which food is made from milk?",a:"cheese",opts:["cheese","carrot","bread"]},
+"Clothes":{e:"👕",intro:"Learn what we wear in different seasons and situations.",words:[["👕","T-shirt","My T-shirt is green."],["👖","jeans","These jeans are comfortable."],["👗","dress","She is wearing a dress."],["🧥","jacket","Take your jacket. It is cold."],["🧦","socks","My socks are white."],["👟","trainers","I wear trainers to run."],["👒","hat","Her hat is beautiful."],["👞","shoes","Put on your shoes."],["🧤","gloves","Gloves keep our hands warm."]],read:"It is a cold morning, so Sam wears a jacket, jeans and warm socks. Later, the sun comes out. He takes off his jacket and puts on his cap.",sent:["I wear a uniform to school.","My shoes are under the bed.","She has a yellow raincoat."],listen:["jacket","socks","dress","trainers"],speak:"Today I am wearing a T-shirt and jeans.",q:"What do you wear on your feet inside your shoes?",a:"socks",opts:["gloves","socks","hat"]},
+"House":{e:"🏡",intro:"Explore rooms, furniture and things we use at home.",words:[["🛋️","living room","We watch TV in the living room."],["🛏️","bedroom","I sleep in my bedroom."],["🍳","kitchen","Mum cooks in the kitchen."],["🛁","bathroom","The bathroom has a shower."],["🪑","chair","The chair is next to the table."],["🛋️","sofa","The sofa is comfortable."],["🚪","door","Please close the door."],["🪟","window","Open the window, please."],["🛏️","bed","My bed is soft."],["🧊","fridge","The milk is in the fridge."]],read:"Our house has three bedrooms, a kitchen and a small garden. My favorite room is the living room because we play board games there. The cat likes sleeping on the sofa.",sent:["There is a table in the kitchen.","My bedroom has two windows.","The bathroom is next to my bedroom."],listen:["kitchen","bedroom","window","sofa"],speak:"My favorite room in the house is the living room.",q:"Where do you cook dinner?",a:"kitchen",opts:["bedroom","kitchen","bathroom"]},
+"Days":{e:"📅",intro:"Learn the seven days of the week and talk about your routine.",words:[["1️⃣","Monday","I go to school on Monday."],["2️⃣","Tuesday","We have art on Tuesday."],["3️⃣","Wednesday","Wednesday is in the middle of the week."],["4️⃣","Thursday","I play tennis on Thursday."],["5️⃣","Friday","Friday is the last school day for me."],["6️⃣","Saturday","I visit my cousin on Saturday."],["7️⃣","Sunday","We relax on Sunday."]],read:"On Monday, Nina goes to school. On Friday, she has music class. On Saturday, she visits her grandparents. Sunday is her favorite day because her family has lunch together.",sent:["Today is Wednesday.","Tomorrow is Thursday.","My favorite day is Saturday."],listen:["Monday","Wednesday","Friday","Sunday"],speak:"My favorite day of the week is Saturday.",q:"Which day comes after Tuesday?",a:"Wednesday",opts:["Monday","Wednesday","Friday"]},
+"Weather":{e:"🌦️",intro:"Describe the weather and choose the right clothes for the day.",words:[["☀️","sunny","It is sunny today."],["🌧️","rainy","Take an umbrella. It is rainy."],["☁️","cloudy","The sky is cloudy."],["💨","windy","It is windy outside."],["❄️","snowy","The mountain is snowy."],["⛈️","stormy","It is stormy tonight."],["🌡️","hot","It is hot in summer."],["🧣","cold","I wear a scarf when it is cold."],["🌈","rainbow","A rainbow appears after the rain."]],read:"Today is warm and sunny. The children are playing in the park. Yesterday was rainy, so they stayed inside and played a board game.",sent:["It is cloudy this morning.","I wear a coat when it is cold.","The weather is hot in July."],listen:["sunny","rainy","windy","cloudy"],speak:"The weather is sunny today.",q:"What do you use when it is rainy?",a:"umbrella",opts:["sunglasses","umbrella","fan"]},
+"Actions":{e:"🏃",intro:"Learn action verbs and use them in complete sentences.",words:[["🏃","run","I run in the park."],["🚶","walk","We walk to school."],["📖","read","I read a funny story."],["✍️","write","Please write your name."],["💃","dance","They dance to music."],["🎤","sing","I sing my favorite song."],["🍽️","eat","We eat lunch at noon."],["💤","sleep","Babies sleep a lot."],["🏊","swim","I swim in the pool."],["🦘","jump","The rabbit can jump."]],read:"After school, Leo likes to ride his bike, play football and read comics. In the evening, he helps his family prepare dinner. Before bed, he reads a story.",sent:["The children are playing outside.","My sister can swim very well.","I help my parents at home."],listen:["run","jump","dance","read"],speak:"I like to play, read and ride my bike.",q:"Which action means to move through water?",a:"swim",opts:["swim","sing","write"]}
+};
+const small=["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"],tens=["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+for(let n=1;n<=100;n++){let w=n<20?small[n]:n===100?"one hundred":tens[Math.floor(n/10)]+(n%10?"-"+small[n%10]:"");D.Numbers.words.push([String(n),w,"Number "+n]);}
+let topic="Animals",skill="words",stars=0,listenAnswer="";
+const animalSounds={dog:"Woof! Woof!",cat:"Meow! Meow!",cow:"Moo!",frog:"Ribbit! Ribbit!",lion:"Roar!",sheep:"Baa! Baa!",duck:"Quack! Quack!",horse:"Neigh!",elephant:"Pawoo!",monkey:"Ooh-ooh-ah-ah!"};
+function toast(t){$("toast").textContent=t;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2100)}
+function star(){stars++;$("totalStars").textContent=stars;$("headerStars").textContent=stars;toast("Fantastic! You earned a star! ⭐")}
+function say(t){if(!("speechSynthesis"in window)){toast("Audio is not available in this browser.");return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.85;speechSynthesis.speak(u)}
+function openTopic(t){topic=t;skill="words";$("lessonTitle").textContent=t;$("lessonIntro").textContent=D[t].intro;$("lessonEmoji").textContent=D[t].e;$("lesson").hidden=false;setSkill("words");$("lesson").scrollIntoView({behavior:"smooth"})}
+function setSkill(s){skill=s;document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("active",b.dataset.skill===s));render()}
+function render(){let d=D[topic],root=$("lessonContent");
+if(skill==="words"){root.innerHTML=`<div class="content-head"><div><h3>Word Explorer 🧩</h3><p class="hint">Tap Listen to hear a word. Read the example sentence and practise saying it!</p></div><span class="eyebrow">${d.words.length} WORDS TO DISCOVER</span></div><div class="word-grid">${d.words.map(w=>{let em=(topic==="Numbers"||topic==="Big Numbers")?w[0]:(w.length===3?w[0]:"🔤"),word=w[1],desc=(topic==="Numbers"||topic==="Big Numbers")?"Say it: "+w[1]:(w[2]||"");return `<article class="word-card"><span class="emoji">${em}</span><strong>${word}</strong><small>${desc}</small><button class="sound" data-say="${word}">🔊 Listen</button>${topic==="Animals"?`<button class="sound" data-animal="${word}">🐾 Sound</button>`:""}</article>`}).join("")}</div>`}
+if(skill==="reading"){root.innerHTML=`<div class="content-head"><div><h3>Reading Corner 📖</h3><p class="hint">Read the passage carefully. Then answer the question below.</p></div><span class="eyebrow">READ & UNDERSTAND</span></div><div class="reading"><p>${d.read}</p></div><div class="task"><label>${d.q}</label><select id="readAnswer"><option value="">Choose an answer...</option>${d.opts.map(x=>`<option>${x}</option>`).join("")}</select><button class="check" id="readCheck">Check my answer</button><p id="readResult" class="result"></p></div>`;$("readCheck").onclick=()=>check("readAnswer","readResult",d.a)}
+if(skill==="writing"){root.innerHTML=`<div class="content-head"><div><h3>Writing Workshop ✏️</h3><p class="hint">Complete the sentences. Check your spelling and remember capital letters!</p></div><span class="eyebrow">WRITE IT YOURSELF</span></div>${d.sent.map((s,i)=>{let word=s.match(/[A-Za-z-]+/g).slice(-1)[0];return `<div class="write-card"><b>Challenge ${i+1}</b><p>${s.replace(word,"________")}</p><div class="write-row"><input class="write-input" id="w${i}" data-answer="${word.toLowerCase()}" placeholder="Type the missing word..."><button class="check" data-write="${i}">Check</button></div><p class="result" id="wr${i}"></p></div>`}).join("")}`;root.querySelectorAll("[data-write]").forEach(b=>b.onclick=()=>{let i=b.dataset.write,inp=$("w"+i),r=$("wr"+i);if(inp.value.trim().toLowerCase()===inp.dataset.answer){r.textContent="Excellent spelling! ⭐";r.className="result good";inp.disabled=true;b.disabled=true;star()}else{r.textContent="Almost! Try again. Check the word in the sentence.";r.className="result try"}})}
+if(skill==="listening"){listenAnswer=d.listen[Math.floor(Math.random()*d.listen.length)];let opts=[listenAnswer,...d.listen.filter(x=>x!==listenAnswer).sort(()=>Math.random()-.5).slice(0,2)].sort(()=>Math.random()-.5);root.innerHTML=`<div class="content-head"><div><h3>Listening Lab 🎧</h3><p class="hint">Listen to the word. Which word did you hear? You can listen more than once.</p></div><span class="eyebrow">LISTEN CAREFULLY</span></div><div class="listen"><div class="listen-emoji">🎧</div><p><b>Press play and choose the word.</b></p><button id="playWord">▶ Play the word</button><div class="choices">${opts.map(x=>`<button data-listen="${x}">${x}</button>`).join("")}</div><p id="listenResult" class="result"></p></div>`;$("playWord").onclick=()=>say(listenAnswer);root.querySelectorAll("[data-listen]").forEach(b=>b.onclick=()=>{if(b.dataset.listen===listenAnswer){$("listenResult").textContent="You heard it! Brilliant listening! ⭐";$("listenResult").className="result good";root.querySelectorAll("[data-listen]").forEach(x=>x.disabled=true);star()}else{$("listenResult").textContent="Not quite. Listen again and try once more!";$("listenResult").className="result try"}})}
+if(skill==="speaking"){root.innerHTML=`<div class="content-head"><div><h3>Speaking Studio 🎤</h3><p class="hint">Listen to the sentence, then say it out loud. Speak slowly and clearly.</p></div><span class="eyebrow">USE YOUR VOICE</span></div><div class="speak"><div class="speak-emoji">🗣️</div><p>Your speaking sentence:</p><h3>“${d.speak}”</h3><button id="hearSentence">🔊 Hear the sentence</button><button id="trySpeak">🎙️ Try saying it</button><p class="small-note">Voice recognition depends on your browser. You can always practise aloud without it.</p><p id="speechResult" class="result"></p></div>`;$("hearSentence").onclick=()=>say(d.speak);$("trySpeak").onclick=()=>{let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$("speechResult").textContent="Voice recognition is not available here. Practise saying the sentence aloud!";return}let r=new SR();r.lang="en-US";r.onresult=e=>{$("speechResult").textContent="I heard: “"+e.results[0][0].transcript+"”";$("speechResult").className="result good"};r.onerror=()=>{$("speechResult").textContent="I could not hear that clearly. Please try again."};$("speechResult").textContent="Listening... say the sentence now!";r.start()}}
+}
+function check(input,result,answer){let v=$(input).value,r=$(result);if(v.toLowerCase()===answer.toLowerCase()){r.textContent="Correct! You understood the text. ⭐";r.className="result good";$(input).disabled=true;star()}else{r.textContent="Good try! Read the passage again and choose once more.";r.className="result try"}}
+$("topicGrid").onclick=e=>{let b=e.target.closest("[data-topic]");if(b)openTopic(b.dataset.topic)};
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>setSkill(b.dataset.skill));
+$("lessonContent").onclick=e=>{let b=e.target.closest("[data-say]");if(b)say(b.dataset.say);let a=e.target.closest("[data-animal]");if(a)say(animalSounds[a.dataset.animal]||a.dataset.animal)};
+$("back").onclick=()=>{$("lesson").hidden=true;$("explore").scrollIntoView({behavior:"smooth"})};
+$("topicSearch").oninput=e=>{let q=e.target.value.toLowerCase(),n=0;document.querySelectorAll(".topic").forEach(b=>{let show=b.dataset.topic.toLowerCase().includes(q);b.hidden=!show;if(show)n++});$("noTopics").hidden=n!==0};
+
+const Q=[
+{e:"🐬",q:"Which animal lives in the ocean?",a:"dolphin",o:["dolphin","camel","hen"]},
+{e:"🍌",q:"Which fruit is usually yellow?",a:"banana",o:["grape","banana","cherry"]},
+{e:"📅",q:"Which day comes after Friday?",a:"Saturday",o:["Thursday","Monday","Saturday"]},
+{e:"🧥",q:"What do you wear when it is cold?",a:"jacket",o:["swimsuit","jacket","sandals"]},
+{e:"🖐️",q:"How many fingers are on one hand?",a:"five",o:["three","five","ten"]},
+{e:"🔢",q:"How do you write 100 in English?",a:"one hundred",o:["one thousand","one hundred","ten"]},
+{e:"🌧️",q:"What is the weather like when water falls from the sky?",a:"rainy",o:["sunny","windy","rainy"]},
+{e:"📚",q:"What do you do with a book?",a:"read",o:["swim","read","jump"]}
+];
+let quizSet=[],qi=0,locked=false,quizMode="mixed";
+function rowWord(row){return topic==="Numbers"||topic==="Big Numbers"?row[1]:row[1]}
+function shuffled(arr){return [...arr].sort(()=>Math.random()-.5)}
+function makeTopicQuestions(){
+ const rows=D[topic].words.filter(r=>r[1]&&String(r[1]).trim());
+ const level=$("difficultySelect").value;
+ const pool=shuffled(rows).slice(0,Math.min(5,rows.length));
+ return pool.map(row=>{
+   const word=rowWord(row);
+   const other=shuffled(rows.filter(r=>rowWord(r)!==word)).slice(0,2);
+   if(topic==="Numbers"||topic==="Big Numbers"){
+     if(level==="beginner"){
+       return {e:"🔢",q:`How do you say ${row[0]} in English?`,a:word,o:[word,...other.map(rowWord)]};
+     }
+     if(level==="explorer"){
+       return {e:"🔢",q:`Choose the number written as “${word}”.`,a:row[0],o:[row[0],...other.map(r=>r[0])]};
+     }
+     const n=Number(String(row[0]).replaceAll(",",""));
+     const next=String(n+1).replace(/\B(?=(\d{3})+(?!\d))/g,",");
+     const distractors=shuffled([String(Math.max(0,n-1)).replace(/\B(?=(\d{3})+(?!\d))/g,","),String(n+2).replace(/\B(?=(\d{3})+(?!\d))/g,","),String(n+10).replace(/\B(?=(\d{3})+(?!\d))/g,",")]);
+     return {e:"🏆",q:`What number comes after ${row[0]}?`,a:next,o:[next,...distractors.slice(0,2)]};
+   }
+   if(level==="beginner"){
+     const emoji=row[0]||"🌟";
+     return {e:emoji,q:"What word matches this picture?",a:word,o:[word,...other.map(rowWord)]};
+   }
+   const sentence=row[2]||`I can see a ${word}.`;
+   if(level==="explorer"){
+     return {e:"📘",q:`Which sentence uses “${word}” correctly?`,a:sentence,o:[sentence,...other.map(r=>r[2]||`This is a ${rowWord(r)}.`)]};
+   }
+   const re=new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}\\b`,"i");
+   const blank=sentence.replace(re,"________");
+   return {e:"🏆",q:`Complete the sentence: “${blank}”`,a:word,o:[word,...other.map(rowWord)]};
+ });
+}
+function showQuiz(mode){
+ quizMode=mode;
+ quizSet=mode==="topic"?makeTopicQuestions():shuffled(Q).slice(0,5);
+ qi=0;
+ $("quiz").hidden=false;
+ $("quizNext").textContent="Next question →";
+ $("quizNext").onclick=nextQuestion;
+ showQ();
+ $("quiz").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function showQ(){
+ locked=false;
+ const q=quizSet[qi];
+ $("quizCount").textContent=`Question ${qi+1} of ${quizSet.length}`;
+ $("quizEmoji").textContent=q.e;
+ $("quizQuestion").textContent=q.q;
+ $("quizFeedback").textContent="";
+ $("quizFeedback").className="";
+ $("quizNext").hidden=true;
+ $("quizOptions").innerHTML=shuffled(q.o).map(x=>`<button type="button">${x}</button>`).join("");
+}
+function nextQuestion(){
+ qi++;
+ if(qi<quizSet.length){showQ();return}
+ $("quizEmoji").textContent="🎉";
+ $("quizQuestion").textContent="You finished the quiz!";
+ $("quizOptions").innerHTML="";
+ $("quizFeedback").textContent=quizMode==="topic"?`Amazing work in ${topic}! Try another level or practise again.`:"You did a great job. Come back for another round!";
+ $("quizFeedback").className="good";
+ $("quizCount").textContent="Complete!";
+ $("quizNext").textContent="Play again ↻";
+ $("quizNext").hidden=false;
+ $("quizNext").onclick=()=>showQuiz(quizMode);
+}
+$("quizOptions").onclick=e=>{
+ const b=e.target.closest("button");
+ if(!b||locked)return;
+ locked=true;
+ const q=quizSet[qi],ok=b.textContent.toLowerCase()===q.a.toLowerCase();
+ $("quizOptions").querySelectorAll("button").forEach(x=>{
+   x.disabled=true;
+   if(x.textContent.toLowerCase()===q.a.toLowerCase())x.classList.add("correct");
+ });
+ if(ok){
+   $("quizFeedback").textContent="Correct! Fantastic work! ⭐";
+   $("quizFeedback").className="good";
+   star();
+ }else{
+   b.classList.add("wrong");
+   $("quizFeedback").textContent=`Good try! The correct answer is: ${q.a}. You can keep going!`;
+   $("quizFeedback").className="try";
+ }
+ $("quizNext").hidden=false;
+};
+$("startQuiz").onclick=()=>showQuiz("mixed");
+$("topicQuizBtn").onclick=()=>showQuiz("topic");
+$("menuToggle").onclick=()=>$("mainNav").classList.toggle("open");
+$("mainNav").onclick=e=>{if(e.target.closest("a"))$("mainNav").classList.remove("open")};
