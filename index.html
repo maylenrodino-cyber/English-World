@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#A9DDF5"><title>ENGLISH WORLD | Learn & Play</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="English World inicio"><span>🌈</span> ENGLISH WORLD</a>
+  <nav id="nav" aria-label="Categorías"></nav>
+  <div class="stats"><span>⭐ <b id="stars">0</b></span><span>🏆 <b id="points">0</b></span></div>
+</header>
+<main id="app">
+<section class="hero" id="home">
+  <div class="hero-copy"><p class="eyebrow">✨ A little world of big discoveries</p><h1>Learn English.<br><span>Play with joy!</span></h1>
+  <p>¡Bienvenido a un mundo mágico! Explora palabras, escucha su pronunciación y juega mientras aprendes inglés.</p>
+  <button class="primary" id="startBtn">START / COMENZAR 🚀</button>
+  <div class="hero-tags"><span>🦊 Explore</span><span>🎧 Listen</span><span>⭐ Earn stars</span></div></div>
+  <div class="hero-art" aria-label="Animales caricaturescos"><div class="sun">☀️</div><div class="cloud">☁️</div><div class="animal fox">🦊</div><div class="animal bear">🐻</div><div class="animal bunny">🐰</div><div class="rainbow">🌈</div><div class="flower">🌼</div></div>
+</section>
+<section class="welcome"><div><h2>Choose your adventure!</h2><p>Selecciona una categoría para comenzar a explorar.</p></div><div class="level-pill">🎯 Nivel actual: <b id="levelLabel">1 · Fácil</b></div></section>
+<section id="categories" class="category-grid" aria-label="Categorías de vocabulario"></section>
+<section id="lesson" class="lesson hidden">
+  <div class="lesson-head"><button class="back" id="backBtn">← Categorías</button><div><p class="eyebrow">YOUR LEARNING ADVENTURE</p><h2 id="lessonTitle">Animals</h2></div><div class="level-pill">Nivel <b id="lessonLevel">1</b></div></div>
+  <div class="tabs" id="gameTabs"></div>
+  <div class="progress-wrap"><div class="progress-meta"><span id="progressText">Pregunta 1</span><span id="attemptText">Intentos: 3</span></div><div class="progress"><span id="progressBar"></span></div></div>
+  <div id="gameArea"></div>
+</section>
+<section class="rewards" id="rewards"><div><span class="reward-icon">🏆</span><h2>Your little victories</h2><p>¡Cada palabra que aprendes es una nueva estrella!</p></div><div class="reward-numbers"><div><strong id="rewardPoints">0</strong><small>POINTS</small></div><div><strong id="rewardStars">0</strong><small>STARS</small></div><div><strong id="rewardLevel">1</strong><small>LEVEL</small></div></div></section>
+</main>
+<footer>Made with 💛 for little English explorers · ENGLISH WORLD</footer>
+<script src="script.js"></script>
+</body></html>
